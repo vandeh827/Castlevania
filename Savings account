@@ -1,0 +1,19 @@
+class SavingsAccount:
+    def __init__(self, account_number, account_holder_name, initial_balance=0):
+        self.account_number = account_number
+        self.account_holder_name = account_holder_name
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited {amount}. Current balance is {self.balance}.")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print(f"Withdrawal failed. Insufficient balance. Current balance is {self.balance}.")
+        else:
+            self.balance -= amount
+            print(f"Withdrew {amount}. Current balance is {self.balance}.")
+
+    def check_balance(self):
+        print(f"Account balance is {self.balance}.")
